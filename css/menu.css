@@ -1,0 +1,181 @@
+.arrow-back {
+    position: absolute;
+    left: 20px;
+    color: #000;
+}
+
+.bg-img {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.plat-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 13px;
+    background: #f6f6f6;
+}
+
+.plat-container::before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: #f6f6f6;
+    border-radius: 40px 40px 0 0;
+}
+
+.plat-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 5px;
+}
+
+.plat-name h1 {
+    font-family: 'Shrikhand';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+
+.choix-categorie {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.choix-title {
+    text-transform: uppercase;
+}
+
+.separation {
+    width: 40px;
+    margin-top: 5px;
+    border-top: 3px solid #99E2D0;
+}
+
+.choix-plats {
+    position: relative;
+    padding: 12px 15px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    animation: showCard 1s;
+    animation-fill-mode: forwards;
+}
+
+.choix-plats:nth-child(2) {
+    animation-delay: 0s;
+}
+.choix-plats:nth-child(3) {
+    animation-delay: 0.1s;
+}
+.choix-plats:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.choix-plats:nth-child(5) {
+    animation-delay: 0.7s;
+}
+
+@keyframes showCard {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.selected {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #99e2d0;
+    border-radius: 0 10px 10px 0;
+    transition-duration: 0.5s;
+}
+
+.selected i {
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.2s 0s;
+}
+
+.choix-plats:hover > .selected {
+    transition-duration: 0.5s;
+    width: 60px;   
+}
+
+.choix-plats:hover > .selected i {
+    opacity: 1;
+    transition: all 0.3s 0.3s;
+}
+
+.choix-plats:hover > .plat-prix {
+    transition-duration: 0.5s;
+    transform: translateX(-60px);
+}
+
+.choix-plats:hover {
+    padding-right: 120px;
+}
+
+.plat-title {
+    line-height: 30px;
+    font-weight: 600;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+}
+
+.plat-text {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 17px;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+
+}
+
+.plat-prix {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    transition-duration: 0.5s;
+    font-weight: 700;
+}
+
+.btn-menu {
+    padding: 15px 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+
+@media (min-width : 764px) {
+    .plat-container {
+        padding-left: 10%;
+        padding-right: 10%;
+        margin: 0 10%;
+    }
+}
